@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. İkbal Demirtaş | Medikal Estetik Hekimi | Elazığ</title>
+  <meta name="description" content="Dr. İkbal Demirtaş, Elazığ'da medikal estetik uygulamaları ile doğal ve tazeleyici görünüm sağlıyor. Kırışıklık tedavisi, yüz şekillendirme, dolgu uygulamaları ve daha fazlası." />
+  <meta name="keywords" content="medikal estetik elazığ, yüz dolgu elazığ, kırışıklık tedavisi elazığ, mezoterapi elazığ, dr ikbal demirtaş" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #faf7f2;
+      --rose: #c9a97e;
+      --rose-light: #e8d5bd;
+      --charcoal: #2c2826;
+      --mid: #6b5f57;
+      --white: #ffffff;
+      --section-bg: #f5efe8;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 60px;
+      background: rgba(250, 247, 242, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,169,126,0.2);
+      transition: padding 0.3s;
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      color: var(--charcoal);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--rose); }
+    .nav-links { display: flex; gap: 40px; list-style: none; }
+    .nav-links a {
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--mid);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--rose); }
+    .nav-cta {
+      background: var(--charcoal);
+      color: var(--cream) !important;
+      padding: 10px 24px;
+      border-radius: 2px;
+      font-size: 0.74rem !important;
+      letter-spacing: 0.2em !important;
+    }
+    .nav-cta:hover { background: var(--rose); color: var(--white) !important; }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+    }
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 140px 70px 80px 70px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 32px;
+    }
+    .hero-badge::before {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--rose);
+    }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 5vw, 5rem);
+      font-weight: 300;
+      line-height: 1.12;
+      color: var(--charcoal);
+      margin-bottom: 28px;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--rose);
+    }
+    .hero-desc {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--mid);
+      max-width: 440px;
+      margin-bottom: 48px;
+    }
+    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--charcoal);
+      color: var(--white);
+      padding: 15px 36px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn-primary:hover { background: var(--rose); transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent;
+      color: var(--charcoal);
+      padding: 14px 36px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid rgba(44,40,38,0.3);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .btn-outline:hover { border-color: var(--rose); color: var(--rose); transform: translateY(-2px); }
+    .hero-image {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-image::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(201,169,126,0.12) 0%, transparent 60%);
+      z-index: 1;
+    }
+    .hero-image-inner {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(160deg, #e8ddd4 0%, #d4c4b4 40%, #c2b09e 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      opacity: 0.5;
+    }
+    .hero-placeholder svg { width: 80px; height: 80px; }
+    .hero-placeholder p { font-size: 0.8rem; letter-spacing: 0.1em; color: var(--mid); }
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 56px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(201,169,126,0.25);
+    }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: var(--charcoal);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-top: 6px;
+    }
+
+    /* ── SECTION HEADER ── */
+    .section-header { text-align: center; margin-bottom: 64px; }
+    .section-tag {
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--charcoal);
+    }
+    .section-title em { font-style: italic; color: var(--rose); }
+    .section-divider {
+      width: 50px;
+      height: 1px;
+      background: var(--rose);
+      margin: 24px auto 0;
+    }
+
+    /* ── SERVICES ── */
+    #hizmetler {
+      padding: 110px 60px;
+      background: var(--white);
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .service-card {
+      background: var(--cream);
+      padding: 48px 40px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: default;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 2px;
+      background: var(--rose);
+      transition: width 0.4s ease;
+    }
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(44,40,38,0.08); }
+    .service-card:hover::before { width: 100%; }
+    .service-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: rgba(201,169,126,0.18);
+      position: absolute;
+      top: 20px; right: 28px;
+      line-height: 1;
+    }
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(201,169,126,0.12);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+    .service-icon svg { width: 20px; height: 20px; stroke: var(--rose); fill: none; stroke-width: 1.5; }
+    .service-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .service-desc {
+      font-size: 0.88rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--mid);
+    }
+
+    /* ── ABOUT ── */
+    #hakkimda {
+      padding: 110px 60px;
+      background: var(--section-bg);
+    }
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: center;
+    }
+    .about-image-wrap {
+      position: relative;
+    }
+    .about-image-box {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: linear-gradient(160deg, #d9cdc3 0%, #c6b8ab 100%);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .about-image-box svg { width: 70px; height: 70px; opacity: 0.35; }
+    .about-accent {
+      position: absolute;
+      bottom: -24px; right: -24px;
+      width: 160px;
+      height: 160px;
+      border: 2px solid rgba(201,169,126,0.35);
+      border-radius: 4px;
+      z-index: -1;
+    }
+    .about-text { }
+    .credentials {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 40px;
+    }
+    .cred-item {
+      background: var(--white);
+      padding: 20px 24px;
+      border-radius: 4px;
+    }
+    .cred-title {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 6px;
+    }
+    .cred-value {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--charcoal);
+      line-height: 1.5;
+    }
+    .about-text p {
+      font-size: 0.97rem;
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--mid);
+      margin-bottom: 18px;
+    }
+
+    /* ── WHY ── */
+    #neden {
+      padding: 110px 60px;
+      background: var(--charcoal);
+      color: var(--white);
+    }
+    #neden .section-title { color: var(--white); }
+    #neden .section-tag { color: var(--rose-light); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .why-card {
+      padding: 40px 32px;
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: background 0.3s;
+    }
+    .why-card:hover { background: rgba(201,169,126,0.06); }
+    .why-icon {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .why-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 12px;
+      color: var(--rose-light);
+    }
+    .why-card p {
+      font-size: 0.85rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.55);
+    }
+
+    /* ── CONTACT ── */
+    #iletisim {
+      padding: 110px 60px;
+      background: var(--cream);
+    }
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .contact-info h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--charcoal);
+      margin-bottom: 10px;
+    }
+    .contact-info > p {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--mid);
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+    .contact-items { display: flex; flex-direction: column; gap: 24px; }
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+    }
+    .contact-item-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(201,169,126,0.12);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-item-icon svg { width: 18px; height: 18px; stroke: var(--rose); fill: none; stroke-width: 1.5; }
+    .contact-item-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 4px;
+    }
+    .contact-item-value {
+      font-size: 0.92rem;
+      color: var(--charcoal);
+      line-height: 1.6;
+    }
+    .contact-item-value a { color: var(--charcoal); text-decoration: none; }
+    .contact-item-value a:hover { color: var(--rose); }
+    .contact-form { }
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 18px;
+      background: var(--white);
+      border: 1px solid rgba(201,169,126,0.25);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--charcoal);
+      outline: none;
+      transition: border-color 0.3s;
+      border-radius: 2px;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus { border-color: var(--rose); }
+    .form-group textarea { resize: vertical; min-height: 130px; }
+    .disclaimer {
+      font-size: 0.75rem;
+      color: var(--mid);
+      line-height: 1.7;
+      opacity: 0.75;
+      margin-top: 16px;
+      padding: 12px 16px;
+      border-left: 2px solid var(--rose-light);
+      background: rgba(201,169,126,0.06);
+    }
+    .social-links { display: flex; gap: 16px; margin-top: 32px; }
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--charcoal);
+      color: var(--white);
+      padding: 10px 20px;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.3s;
+    }
+    .social-link:hover { background: var(--rose); }
+    .social-link svg { width: 16px; height: 16px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--charcoal);
+      padding: 40px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.12em;
+    }
+    .footer-logo span { color: var(--rose); }
+    .footer-links { display: flex; gap: 30px; }
+    .footer-links a {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .footer-links a:hover { color: var(--rose); }
+    .footer-copy {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.08em;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero-badge { animation: fadeUp 0.7s ease both; }
+    .hero-title { animation: fadeUp 0.7s 0.15s ease both; }
+    .hero-desc { animation: fadeUp 0.7s 0.3s ease both; }
+    .hero-btns { animation: fadeUp 0.7s 0.45s ease both; }
+    .hero-stats { animation: fadeUp 0.7s 0.6s ease both; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      nav { padding: 18px 24px; }
+      .nav-links { display: none; }
+      #hero { grid-template-columns: 1fr; }
+      .hero-text { padding: 120px 30px 60px; }
+      .hero-image { display: none; }
+      #hizmetler, #hakkimda, #neden, #iletisim { padding: 70px 24px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .about-inner, .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+      .why-grid { grid-template-columns: 1fr 1fr; }
+      footer { flex-direction: column; gap: 20px; text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Dr. İkbal <span>Demirtaş</span></a>
+  <ul class="nav-links">
+    <li><a href="#hizmetler">Hizmetler</a></li>
+    <li><a href="#hakkimda">Hakkımda</a></li>
+    <li><a href="#neden">Neden Ben?</a></li>
+    <li><a href="https://wa.link/f8ga4l" target="_blank" class="nav-cta">WhatsApp'tan Randevu Al</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-text">
+    <div class="hero-badge">Medikal Estetik Hekimi · Elazığ</div>
+    <h1 class="hero-title">
+      Güzelliğinizi<br />
+      <em>Doğallıkla</em><br />
+      Ortaya Çıkarın
+    </h1>
+    <p class="hero-desc">
+      Güzellik algınızı bozmadan, sizi taze ve dinç gösterecek kişiselleştirilmiş medikal estetik uygulamaları. Her tedavi, sizin için özel olarak planlanır.
+    </p>
+    <div class="hero-btns">
+      <a href="https://wa.link/f8ga4l" target="_blank" class="btn-primary" style="display:inline-flex;align-items:center;gap:9px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        WhatsApp'tan Randevu Al
+      </a>
+      <a href="https://www.instagram.com/dr.ikbaldemirtas" target="_blank" class="btn-outline" style="display:inline-flex;align-items:center;gap:9px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
+        Instagram
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">5+</div>
+        <div class="stat-label">Yıl Deneyim</div>
+      </div>
+      <div>
+        <div class="stat-num">5K+</div>
+        <div class="stat-label">Mutlu Danışan</div>
+      </div>
+      <div>
+        <div class="stat-num">%100</div>
+        <div class="stat-label">Güvenli Uygulama</div>
+      </div>
+    </div>
+  </div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=900&q=80&fit=crop" 
+           alt="Medikal estetik klinik" 
+           style="width:100%;height:100%;object-fit:cover;display:block;" />
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section id="hizmetler">
+  <div class="section-header">
+    <p class="section-tag">Uzmanlık Alanları</p>
+    <h2 class="section-title">Sunduğum <em>Hizmetler</em></h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="services-grid">
+
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 3c-1.5 3-3 5-3 8a3 3 0 0 0 6 0c0-3-1.5-5-3-8z"/><path d="M6 12c-2 1-3 3-3 5"/><path d="M18 12c2 1 3 3 3 5"/></svg>
+      </div>
+      <div class="service-name">Kırışıklık Giderme Tedavisi</div>
+      <p class="service-desc">Yüz kaslarını etkileyen mimik çizgilerini, alın kırışıklıklarını ve göz çevresi çizgilerini hedef alan, FDA onaylı tıbbi uygulamalarla doğal ve tazelenmiş bir görünüm elde edin.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="9" ry="11"/><path d="M8 9c1 1 2 1.5 4 1.5s3-.5 4-1.5"/><path d="M8 15c1-1 2-1.5 4-1.5s3 .5 4 1.5"/></svg>
+      </div>
+      <div class="service-name">Dudak Şekillendirme</div>
+      <p class="service-desc">Hyalüronik asit bazlı dolgu uygulamaları ile dudaklarınıza doğal hacim, belirginlik ve simetri kazandırın. Yapay görünümden uzak, yüzünüzle uyumlu sonuçlar.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 1 5 5c0 4-5 9-5 9S7 11 7 7a5 5 0 0 1 5-5z"/><circle cx="12" cy="7" r="2"/></svg>
+      </div>
+      <div class="service-name">Burun Şekillendirme</div>
+      <p class="service-desc">Ameliyatsız dolgu uygulamaları ile burun konturlarınızı düzeltip yüz profilinizi dengeleyin. Kısa sürede, dikkat çekici farklılıklar.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-num">04</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 5c-3 0-6 2-6 5 0 4 3 7 6 9 3-2 6-5 6-9 0-3-3-5-6-5z"/></svg>
+      </div>
+      <div class="service-name">Elmacık Şekillendirme</div>
+      <p class="service-desc">Yüz oval yapısını dengeleyerek elmacık kemiklerinizi öne çıkaran dolgu uygulamaları ile genç ve canlı bir görünüm elde edin.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-num">05</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M4 8c0-2 2-4 4-4h8c2 0 4 2 4 4s-2 8-8 8-8-6-8-8z"/><path d="M8 16c0 2 1.5 4 4 4s4-2 4-4"/></svg>
+      </div>
+      <div class="service-name">Sıvı Yüz Germe</div>
+      <p class="service-desc">Yüz çevresindeki hacim kayıplarını ve sarkmaları dolgu teknikleri ile gidererek, cerrahi gerektirmeden gençleştirilmiş yüz konturu elde edin.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-num">06</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+      </div>
+      <div class="service-name">Mezoterapi & Cilt Yenileme</div>
+      <p class="service-desc">Vitamin, mineral ve hyalüronik asit içeren özel kokteyllerle yapılan mezoterapi ile cilt nem dengesini ve parlaklığını yeniden kazanın.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- IMAGE GALLERY STRIP -->
+<section style="background:var(--white);padding:0;overflow:hidden;">
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);height:280px;gap:3px;">
+    <div style="overflow:hidden;">
+      <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=500&q=80&fit=crop&crop=face" 
+           alt="Doğal güzellik" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" 
+           onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'" />
+    </div>
+    <div style="overflow:hidden;">
+      <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=500&q=80&fit=crop" 
+           alt="Güzellik ve bakım" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;"
+           onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'" />
+    </div>
+    <div style="overflow:hidden;">
+      <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=500&q=80&fit=crop" 
+           alt="Lüks klinik" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;"
+           onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'" />
+    </div>
+    <div style="overflow:hidden;position:relative;">
+      <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=500&q=80&fit=crop&crop=face" 
+           alt="Özgüven ve güzellik" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;"
+           onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'" />
+      <div style="position:absolute;inset:0;background:rgba(44,40,38,0.45);display:flex;align-items:center;justify-content:center;">
+        <div style="text-align:center;color:#fff;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;letter-spacing:0.05em;">Doğal</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-style:italic;color:#e8d5bd;">Güzellik</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="hakkimda">
+  <div class="about-inner">
+    <div class="about-image-wrap">
+      <div class="about-image-box" style="padding:0;overflow:hidden;background:linear-gradient(145deg,#f0e8df 0%,#e2d4c8 50%,#d4c4b4 100%);display:flex;align-items:center;justify-content:center;">
+        <div style="text-align:center;padding:40px;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:300;color:rgba(201,169,126,0.35);line-height:1;">✦</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--mid);letter-spacing:0.08em;margin-top:16px;">Dr. İkbal</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-style:italic;color:var(--rose);letter-spacing:0.08em;">Demirtaş</div>
+          <div style="width:40px;height:1px;background:var(--rose);margin:20px auto;"></div>
+          <div style="font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--mid);">Medikal Estetik Hekimi</div>
+          <div style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--rose);margin-top:6px;">Elazığ</div>
+        </div>
+      </div>
+      <div class="about-accent"></div>
+    </div>
+    <div class="about-text">
+      <p class="section-tag">Hakkımda</p>
+      <h2 class="section-title" style="text-align:left; margin-bottom:32px;">
+        Dr. İkbal<br /><em>Demirtaş</em>
+      </h2>
+      <p>Gazi Üniversitesi Tıp Fakültesi'nden mezun olduktan sonra mecburi hizmetimi başarıyla tamamladım. Ardından büyük tutkum olan medikal estetik alanına yöneldim ve bu alandaki tüm kapsamlı eğitim programlarını tamamladım.</p>
+      <p>İstanbul Nişantaşı'ndaki prestijli kliniklerde 5 yıl boyunca yüzlerce kişiye uygulamalar gerçekleştirerek derin bir klinik deneyim kazandım. Şu anda memleketim Elazığ'da, hemşerilerime uluslararası standartlarda estetik hizmetler sunuyorum.</p>
+      <p>Her danışanımın yüz yapısı ve estetik hedefleri birbirinden farklıdır. Bu nedenle her uygulamayı kişiye özel olarak planlıyor, doğallığı her zaman ön planda tutuyorum.</p>
+      <div class="credentials">
+        <div class="cred-item">
+          <div class="cred-title">Eğitim</div>
+          <div class="cred-value">Gazi Üniversitesi Tıp Fakültesi</div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-title">Deneyim</div>
+          <div class="cred-value">5+ Yıl · İstanbul & Elazığ</div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-title">Uzmanlık</div>
+          <div class="cred-value">Medikal Estetik Hekimliği</div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-title">Lokasyon</div>
+          <div class="cred-value">Elazığ · Mir Center, Kat:6</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="neden">
+  <div class="section-header">
+    <p class="section-tag" style="color:var(--rose-light)">Neden Bizi Tercih Edin</p>
+    <h2 class="section-title" style="color:var(--white)">Farkımız <em>Ne?</em></h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="why-grid" style="max-width:1200px;margin:0 auto;">
+    <div class="why-card">
+      <div class="why-icon">🎓</div>
+      <h3>Tıbbi Uzmanlık</h3>
+      <p>Her uygulama, tıp fakültesi eğitimi ve kapsamlı klinik deneyime dayalı olarak yapılır.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">✨</div>
+      <h3>Doğal Sonuçlar</h3>
+      <p>Yapay görünümden uzak, yüz yapınıza uyumlu ve çevrenizin fark etmeyeceği doğal sonuçlar.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🛡️</div>
+      <h3>Güvenli Uygulamalar</h3>
+      <p>Onaylı ürünler ve steril klinik koşullarında, hasta güvenliği ön planda tutularak yapılan işlemler.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">💬</div>
+      <h3>Kişisel Danışmanlık</h3>
+      <p>Her danışanla özel görüşme yapılır, beklentiler ve hedefler birlikte değerlendirilerek plan oluşturulur.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="iletisim">
+  <div class="section-header">
+    <p class="section-tag">Randevu & İletişim</p>
+    <h2 class="section-title">Bize <em>Ulaşın</em></h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="contact-inner">
+    <div class="contact-info">
+      <h3>İletişim Bilgileri</h3>
+      <p>Randevu almak veya uygulamalar hakkında bilgi almak için bize ulaşabilirsiniz. İlk görüşme ücretsizdir.</p>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.9 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.81 3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 10.91a16 16 0 0 0 5.61 5.61l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 18z"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">Telefon</div>
+            <div class="contact-item-value"><a href="tel:05451205198">0545 120 51 98</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">Adres</div>
+            <div class="contact-item-value">Mir Center (Elysium AVM karşısı)<br />Kat:6, Elazığ</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">Instagram</div>
+            <div class="contact-item-value"><a href="https://www.instagram.com/dr.ikbaldemirtas" target="_blank">@dr.ikbaldemirtas</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="social-links" style="margin-top:32px;">
+        <a href="https://wa.link/f8ga4l" class="social-link" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          WhatsApp ile Yaz
+        </a>
+        <a href="https://www.instagram.com/dr.ikbaldemirtas" class="social-link" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+          Instagram
+        </a>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;justify-content:center;">
+      <div class="disclaimer">
+        Bu site yalnızca bilgilendirme amaçlıdır. Sunulan bilgiler tıbbi tavsiye niteliği taşımaz. Randevu ve bilgi için WhatsApp veya Instagram üzerinden ulaşabilirsiniz.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Dr. İkbal <span>Demirtaş</span> · Medikal Estetik</div>
+  <div class="footer-links">
+    <a href="#">Gizlilik Politikası</a>
+    <a href="#">Çerez Politikası</a>
+    <a href="#">Şart ve Koşullar</a>
+  </div>
+  <div class="footer-copy">© 2025 İkbal Demirtaş. Tüm hakları saklıdır.</div>
+</footer>
+
+</body>
+</html>
